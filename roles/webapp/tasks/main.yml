@@ -1,0 +1,48 @@
+---
+# tasks file for webapp
+- name: Create directory structure
+  file:
+    path: '{{ basePath }}{{ packageName }}{{ item }}'
+    state: directory
+  with_items:
+    - '/public'
+    - '/src'
+    - '/dist'
+- name: Create package.json
+  template:
+    src: package.json.j2
+    dest: '{{ basePath }}{{ packageName }}/package.json'
+    force: no
+- name: Create index.html
+  template:
+    src: public/index.html.j2
+    dest: '{{ basePath }}{{ packageName }}/public/index.html'
+    force: no
+- name: Create index.js
+  template:
+    src: src/index.js.j2
+    dest: '{{ basePath }}{{ packageName }}/src/index.js'
+    force: no
+- name: Create App.js
+  template:
+    src: src/App.js.j2
+    dest: '{{ basePath }}{{ packageName }}/src/App.js'
+    force: no
+- name: Create App.css
+  template:
+    src: src/App.css.j2
+    dest: '{{ basePath }}{{ packageName }}/src/App.css'
+    force: no
+- name: Create babel.rc
+  template:
+    src: babelrc.j2
+    dest: '{{ basePath }}{{ packageName }}/.babelrc'
+    force: no
+- name: Create webpack.config.js
+  template:
+    src: webpack.config.js.j2
+    dest: '{{ basePath }}{{ packageName }}/webpack.config.js'
+    force: no
+- name: Install npm dependencies
+  command:
+    chdir='{{ basePath }}{{packageName }}' npm install

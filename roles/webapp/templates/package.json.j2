@@ -1,0 +1,24 @@
+{
+  "name": "{{ packageName }}",
+  "version": "{{ packageVersion }}",
+  "description": "{{ packageDesc }}",
+  "main": "{{ entryPoint }}",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "{{ packageAuthor }}",
+  "license": "{{ packageLicense }}",
+  "devDependencies": {
+{% for dependency in devDependencies %}
+{% if not loop.last %}
+    "{{ dependency.name }}": "{{ dependency.version }}",
+{% endif %}
+{% if loop.last %}
+    "{{ dependency.name }}": "{{ dependency.version }}" 
+{% endif %}
+{% endfor %}
+  },
+  "scripts": {
+    "start": "webpack-dev-server"
+  }
+}

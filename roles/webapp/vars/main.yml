@@ -1,0 +1,21 @@
+basePath: /home/pixie/webapps/
+packageName: react-app
+packageVersion: 1.0.0
+packageDesc: "MERN Stack"
+packageAuthor: pixie
+packageLicense: BSD
+entryPoint: index.js
+devDependencies:
+  - {name: "@babel/cli", version: "^7.1.0"}
+  - {name: "@babel/core", version: "^7.1.0"}
+  - {name: "@babel/preset-env", version: "^7.1.0"}
+  - {name: "@babel/preset-react", version: "^7.0.0"}
+  - {name: "webpack", version: "^4.19.1"}
+  - {name: "webpack-cli", version: "^3.1.1" }
+  - {name: "webpack-dev-server", version: "^3.8.0" }
+  - {name: "style-loader", version: "^0.23.0" }
+  - {name: "css-loader", version: "^1.0.0" }
+  - {name: "babel-loader", version: "^8.0.2" }
+  - {name: "react", version: "^16.5.2" }
+  - {name: "react-dom", version: "^16.5.2" }
+  - {name: "react-hot-loader", version: "^4.12.11" }
